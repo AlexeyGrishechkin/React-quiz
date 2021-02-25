@@ -1,5 +1,5 @@
 import React from 'react'
-import classes from './Input.css'
+import classes from './Input.module.css'
 
 function isInvalid({valid, touched, shouldValidate}) {
   return !valid && shouldValidate && touched

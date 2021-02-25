@@ -1,5 +1,53 @@
+// import React, { useEffect } from 'react';
+// import classes from './Quiz.module.css';
+// import ActiveQuiz from '../../components/ActiveQuiz/ActiveQuiz';
+// import FinishedQuiz from '../../components/FinishedQuiz/FinishedQuiz';
+// import Loader from '../../components/UI/Loader/Loader';
+// import { useSelector, useDispatch } from 'react-redux';
+// import { fetchQuizById, quizAnswerClick, retryQuiz } from '../../store/actions/quiz';
+
+// const Quiz = (props) => {
+//   const results = useSelector((state) => state.quiz.results);
+//   const isFinished = useSelector((state) => state.quiz.isFinished);
+//   const activeQuestion = useSelector((state) => state.quiz.activeQuestion);
+//   const answerState = useSelector((state) => state.quiz.answerState);
+//   const quiz = useSelector((state) => state.quiz.quiz);
+//   const loading = useSelector((state) => state.quiz.loading);
+
+//   const dispatch = useDispatch();
+
+//   useEffect(() => {
+//     dispatch(fetchQuizById(props.match.params.id));
+//     return ()=>dispatch(retryQuiz());
+//   }, [dispatch]);
+
+//   return (
+//     <div className={classes.Quiz}>
+//       <div className={classes.QuizWrapper}>
+//         <h1>Ответьте на все вопросы</h1>
+//         {loading || !quiz ? (
+//           <Loader />
+//         ) : isFinished ? (
+//           <FinishedQuiz results={results} quiz={quiz} onRetry={retryQuiz} />
+//         ) : (
+//           <ActiveQuiz
+//             answers={quiz[activeQuestion].answers}
+//             question={quiz[activeQuestion].question}
+//             onAnswerClick={quizAnswerClick}
+//             quizLength={quiz.length}
+//             answerNumber={activeQuestion + 1}
+//             state={answerState}
+//           />
+//         )}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Quiz;
+
 import React, { Component } from 'react';
-import classes from './Quiz.css';
+import classes from './Quiz.module.css';
 import ActiveQuiz from '../../components/ActiveQuiz/ActiveQuiz';
 import FinishedQuiz from '../../components/FinishedQuiz/FinishedQuiz';
 import Loader from '../../components/UI/Loader/Loader';
